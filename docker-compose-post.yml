@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  db:
+    image: centos/postgresql-94-centos7
+    environment:
+      - POSTGRESQL_DATABASE=mydatabase
+      - POSTGRESQL_USER=docker
+      - POSTGRESQL_PASSWORD=docker
+    ports:
+      - "5432"
+
+  # app:
+  #   build: ./flask-registration
+  #   #image: myappflask
+  #   ports:
+  #     - "5000"
+  #   entrypoint: sleep 10000
+  #   environment:
+  #     - APP_SETTINGS="project.config.DevelopmentConfig"
+  #     - SQLALCHEMY_DATABASE_URI="postgresql://docker:docker@db:5432/mydatabase"
+  #     - APP_MAIL_USERNAME="docker"
+  #     - APP_MAIL_PASSWORD="docker"
